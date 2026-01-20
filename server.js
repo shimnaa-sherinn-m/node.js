@@ -1,40 +1,4 @@
-// const { log } = require('console')
-// var http = require ('http')
-// const PORT = 3000
-//  http.createServer(function(req,res){
-//     res.write("hello node.js")
-//     res.end()
-//  }).listen(PORT,()=>{
-//     console.log(`server running http://localhost:${PORT}`);
-    
-//  })
 
-
-// const fs = require('fs')
-// const http = require('http')
-// try {
-//     fs.writeFileSync('demo.txt','hello text from new file')
-//     console.log('file created');
-    
-// }catch (error) {
-//     console.log(error);
-    
-// }
-// const server =http.createServer((req,res)=>{
-//     fs.readFile('demo.txt',(error,data)=>{
-//         if(error){
-//             res.writeHead(500,{'content-type':'text/plain'})
-//             res.end("error handling file")
-//             return
-//         }
-//         res.writeHead(200,{'content-type':'text-plain'})
-//         res.end(data)
-//     })
-// })
-// const port = 3000
-// server.listen(port,()=>{
-//      console.log(`server running http://localhost:${port}`);
-// })
 
 const http = require('http')
 const fs = require('fs')
@@ -57,18 +21,6 @@ const server =  http.createServer((req,res)=>{
     })
    }
 
-   if (path.pathname=='/contact') {
-    fs.readFile('./contact.html',(error,data)=>{
-        if (error) {
-            res.writeHead(404,{'content-type':'text/html'})
-            return res.end("page not found")
-            
-        }
-        res.writeHead(200,{'content-type':'text/html'})
-        res.write(data)
-        res.end()
-    })
-   }
     
 
     if (path.pathname=='/index.css') {
@@ -84,7 +36,7 @@ const server =  http.createServer((req,res)=>{
     })
    }
 })
-const PORT = 3000
+const PORT = 4000
 server.listen(PORT,()=>{
     console.log(`server created at http://localhost:${PORT}`);
     
